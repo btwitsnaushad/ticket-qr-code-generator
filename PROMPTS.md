@@ -157,3 +157,42 @@ After implementing it, run the relevant validator and sanitizer tests and show m
 
 Also add this exact prompt to `PROMPTS.md` as Prompt 6, keeping all previous prompts unchanged.
 ```
+
+---
+
+## Prompt 7: Ticket Service Implementation
+```text
+I’ve finished the validation and input sanitization step, and the related changes are already committed.
+
+Now I want to move to the next small part of the implementation: the ticket service.
+
+Please implement only the ticket service behaviour described in the existing architecture, API specification, and TDD tests.
+
+Before changing anything, review the existing ticket service tests and the current project structure so the implementation matches what we already planned.
+
+For this step, focus on:
+
+- creating a ticket with valid data
+- generating a unique ticket identifier/number when required
+- returning the created ticket in the expected structure
+- preventing duplicate ticket numbers
+- getting a ticket by its identifier
+- returning an appropriate result when a ticket does not exist
+- keeping the existing validation and sanitization behaviour intact
+
+Please follow the existing TypeScript/Vite project structure and keep the implementation simple and focused.
+
+Do not implement the UI, QR code generation, analytics, search interface, or other features yet. Those should remain for their own steps.
+
+After implementing the ticket service, run only the relevant ticket-service tests first, then run the TypeScript check if needed.
+
+If any test fails, explain the reason and fix the implementation rather than changing or weakening the existing tests.
+
+Also update `PROMPTS.md` by adding this exact prompt as Prompt 7, keeping Prompts 1 through 6 unchanged.
+
+When finished, tell me:
+1. which files were changed,
+2. which ticket-service behaviours were implemented,
+3. the test result,
+4. whether TypeScript has any errors.
+```
