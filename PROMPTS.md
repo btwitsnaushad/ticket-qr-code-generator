@@ -129,3 +129,31 @@ After this check, run the test suite again and tell me the final test result, in
 
 Also add this exact prompt to `PROMPTS.md` as Prompt 5.
 ```
+
+---
+
+## Prompt 6: Core Validation & Sanitization Implementation
+```text
+The TDD setup is now committed and the working tree is clean.
+
+I want to start implementing the application in small pieces instead of building everything at once.
+
+Let's start with the core input handling because the ticket creation flow depends on it.
+
+Please implement the validation and sanitization logic in the existing `src/core/validator.ts` and `src/core/sanitizer.ts` files.
+
+It should cover the behaviour already described in our tests and architecture, including:
+
+- required ticket fields
+- empty or whitespace-only values
+- valid ticket numbers
+- duplicate ticket numbers when existing numbers are provided
+- reasonable input length validation
+- sanitizing unsafe HTML/script content before it can be used by the application
+
+Please keep the implementation focused only on validation and sanitization. Don't build the UI, database, QR generation, analytics, or other features yet.
+
+After implementing it, run the relevant validator and sanitizer tests and show me the result. If a test fails, explain why rather than changing the test just to make it pass.
+
+Also add this exact prompt to `PROMPTS.md` as Prompt 6, keeping all previous prompts unchanged.
+```
