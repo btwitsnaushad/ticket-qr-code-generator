@@ -43,3 +43,89 @@ Please keep everything within the existing ticket requirements. Don't add extra 
 
 Once you're done, show me which files were created or updated so I can review them before we commit this step.
 ```
+
+---
+
+## Prompt 3: Test Plan & TDD Test Suites Creation
+```text
+The architecture and API planning is now committed and the working tree is clean.
+
+Before we start building the actual features, I want to follow the TDD approach from the project requirements.
+
+Please create the test plan and test files first, based on the finalized architecture and requirements we already agreed on.
+
+Cover the important cases such as:
+
+- valid ticket creation
+- required field validation
+- invalid or empty input
+- duplicate ticket number
+- XSS/input sanitization
+- QR code generation and SVG output
+- empty ticket/search results
+- loading state during async operations
+- analytics console logging
+- keyboard navigation and ARIA requirements
+
+Use the project stack we already decided on (Vite + TypeScript).
+
+Do not implement the actual application features yet. I want the tests to describe the expected behaviour first, so that we can implement against them afterwards.
+
+Also update `PROMPTS.md` by adding this exact prompt as Prompt 3, keeping the previous prompts unchanged.
+
+When you finish, tell me which test files were created and what each one is checking.
+```
+
+---
+
+## Prompt 4: Diagnostic Check & Setup Resolution
+```text
+I can see the test files and project setup have been created, but there are currently 16 problems showing in the project.
+
+Before I accept these changes, I want to understand what is causing them.
+
+Please check the current problems and run the test suite if possible.
+
+Separate the results into two groups:
+
+1. Problems that are expected because the actual application features have not been implemented yet.
+2. Problems that are genuine setup, configuration, TypeScript, or test errors that should be fixed at this stage.
+
+Please fix only the genuine setup/configuration/test errors. Do not implement the actual application features just to make the tests pass yet.
+
+Also, don't remove or weaken any of the tests we created.
+
+After checking, tell me:
+- how many tests are currently passing
+- how many are failing
+- which failures are expected at this TDD stage
+- whether the project setup is ready for implementation
+
+Also add this exact prompt to `PROMPTS.md` as Prompt 4.
+```
+
+---
+
+## Prompt 5: TDD Pre-Implementation Audit & Verification
+```text
+The setup check looks much better now and the TypeScript diagnostics are clean.
+
+Before I accept these changes, I noticed that several files have been created under `src`, including the sanitizer, validator, QR worker, analytics, ticket service and UI component files.
+
+Since we agreed to follow TDD and write the tests before implementing the actual features, I want to make sure we have not started the feature implementation too early.
+
+Please review the files currently created under `src` and tell me which ones contain actual application logic and which ones are only types, test support, or necessary project setup.
+
+If any actual feature implementation has been added at this stage, remove or revert only that implementation while keeping:
+- the test files
+- the test configuration
+- the TypeScript/Vite setup
+- the project documentation
+- `PROMPTS.md`
+
+Please do not change or weaken the tests.
+
+After this check, run the test suite again and tell me the final test result, including which failures are expected because the features have not been implemented yet.
+
+Also add this exact prompt to `PROMPTS.md` as Prompt 5.
+```
