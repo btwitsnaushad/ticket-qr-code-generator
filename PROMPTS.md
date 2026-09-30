@@ -232,3 +232,31 @@ After implementation:
 
 Do not commit the changes yet. I want to review the changes first.
 ```
+
+---
+
+## Prompt 9: Analytics Console Telemetry Service Implementation
+```text
+Proceed with Prompt 9 implementation based on the plan you just provided.
+
+Implement only the analytics functionality in:
+- src/services/analytics.ts
+
+Implement:
+- trackAnalyticsEvent
+- logTicketCreated
+- logQRCodeGenerated
+- logTicketSearched
+- logTicketListRefreshed
+
+Requirements:
+1. Follow the existing project types, architecture, and API specification.
+2. Do not modify any existing test files.
+3. Do not modify validator.ts, sanitizer.ts, ticketService.ts, qrWorker.ts, or UI files.
+4. Keep the implementation strictly scoped to analytics.ts.
+5. Append the exact Prompt 9 to PROMPTS.md after implementation, while keeping all previous prompts unchanged.
+6. Run the relevant existing tests.
+7. Run `npx tsc --noEmit`.
+8. Show me the test results, TypeScript result, and git diff/status.
+9. Do NOT commit the changes yet. I want to review them first.
+```
