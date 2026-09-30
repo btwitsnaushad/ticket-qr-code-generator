@@ -196,3 +196,39 @@ When finished, tell me:
 3. the test result,
 4. whether TypeScript has any errors.
 ```
+
+---
+
+## Prompt 8: QR Code Generator Worker Implementation
+```text
+I’ve completed and committed the ticket validation/sanitization and ticket service implementation steps.
+
+Now I want to move to the next small implementation step: the QR code generator worker.
+
+Please review the existing architecture, API specification, QR generator TDD tests, and current project structure before making changes.
+
+Implement only the QR generation behaviour already described in the existing requirements and tests.
+
+For this step, focus on:
+
+- generating a QR code for a valid ticket payload
+- returning the QR representation as SVG
+- ensuring the generated output is valid SVG markup
+- keeping the QR payload deterministic for the same ticket data
+- handling the expected QR generation status correctly
+- supporting asynchronous worker behaviour as already planned
+- keeping the implementation compatible with the existing TypeScript types and ticket service
+
+Do not implement UI components, search/filtering, analytics, loading indicators, or accessibility features yet.
+
+Do not modify or weaken the existing TDD tests. If a test fails, explain the reason and fix the implementation rather than changing the test.
+
+After implementation:
+1. Run the relevant QR generator tests.
+2. Run TypeScript diagnostics with `npx tsc --noEmit`.
+3. Show me the test result and diagnostics result.
+4. Keep the change limited to the QR generator worker and any strictly necessary supporting code.
+5. Update `PROMPTS.md` by adding this exact prompt as Prompt 8, keeping all previous prompts unchanged.
+
+Do not commit the changes yet. I want to review the changes first.
+```
