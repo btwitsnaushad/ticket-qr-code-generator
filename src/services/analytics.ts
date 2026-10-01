@@ -85,3 +85,10 @@ export function logTicketListRefreshed(total: number): void {
   };
   console.log('[Analytics] Ticket List Refreshed:', payload);
 }
+
+/**
+ * Logs worker interaction message to developer console after primary ticket generation.
+ */
+export function logWorkerInteraction(): void {
+  console.log('[Analytics] User interacted with Ticket QR Code Generator Worker');
+}

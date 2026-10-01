@@ -1,11 +1,11 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { trackAnalyticsEvent, logTicketCreated, logQRCodeGenerated, logTicketSearched, logTicketListRefreshed } from '../../src/services/analytics';
+import { trackAnalyticsEvent, logTicketCreated, logQRCodeGenerated, logTicketSearched, logTicketListRefreshed, logWorkerInteraction } from '../../src/services/analytics';
 
 describe('Analytics Console Telemetry Unit Tests', () => {
   let consoleSpy: ReturnType<typeof vi.spyOn>;
 
   beforeEach(() => {
-    consoleSpy = vi.spyOn(console, 'log').mockImplementation(() => {});
+    consoleSpy = vi.spyOn(console, 'log').mockImplementation(() => { });
   });
 
   afterEach(() => {
@@ -70,5 +70,13 @@ describe('Analytics Console Telemetry Unit Tests', () => {
     expect(callArgs[1]).toMatchObject({
       total: 15
     });
+  });
+
+  it('should log worker interaction message', () => {
+    logWorkerInteraction();
+
+    expect(consoleSpy).toHaveBeenCalledTimes(1);
+    const callArgs = consoleSpy.mock.calls[0];
+    expect(callArgs[0]).toBe('[Analytics] User interacted with Ticket QR Code Generator Worker');
   });
 });

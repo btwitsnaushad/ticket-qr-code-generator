@@ -6,7 +6,8 @@ import {
   logTicketCreated,
   logQRCodeGenerated,
   logTicketSearched,
-  logTicketListRefreshed
+  logTicketListRefreshed,
+  logWorkerInteraction
 } from './services/analytics';
 import { setupTicketForm } from './ui/components/TicketForm';
 import { renderTicketTable } from './ui/components/TicketTable';
@@ -88,6 +89,7 @@ export function initApp(): void {
         // Emit telemetry
         logTicketCreated(ticket.ticketNumber, ticket.id);
         logQRCodeGenerated(ticket.id, qrCode.qrData);
+        logWorkerInteraction();
 
         // Refresh table view
         const currentSearch = searchInput.value;
