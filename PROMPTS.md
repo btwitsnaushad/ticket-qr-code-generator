@@ -260,3 +260,238 @@ Requirements:
 8. Show me the test results, TypeScript result, and git diff/status.
 9. Do NOT commit the changes yet. I want to review them first.
 ```
+
+---
+
+## Prompt 10: Professional README Creation
+```text
+Create a professional README.md for my existing project:
+
+Ticket QR Code Generator Worker
+Ticket ID: ENG-139055
+
+First inspect the existing codebase, package.json, tests, configuration files, PROMPTS.md, and project structure. Use the actual implementation as the source of truth.
+
+Do not invent any features, technologies, APIs, databases, libraries, metrics, or functionality that are not actually present in the project.
+
+The README should clearly explain what the project does, how it works, its main features, technical implementation, testing, accessibility, security, and deployment.
+
+Use this structure:
+
+# Ticket QR Code Generator Worker
+
+## Overview
+Explain the purpose of the project and the problem it solves.
+
+The project provides a digital interface for creating tickets, generating QR codes, and managing ticket inventory.
+
+Mention Ticket ID: ENG-139055.
+
+## Key Features
+Include only features that are actually implemented:
+- Ticket creation
+- Ticket validation
+- Duplicate ticket number prevention
+- Deterministic SVG QR code generation
+- Ticket inventory table
+- Ticket search
+- Empty-state handling
+- Loading indicator
+- XSS input sanitization
+- Accessibility support
+- Analytics telemetry
+
+## User Flow
+Explain the actual user flow:
+
+1. User enters Ticket Number, Ticket Title, and Holder Name.
+2. Form data is validated.
+3. Invalid submissions are prevented and errors are displayed.
+4. Valid ticket data is processed.
+5. A QR code is generated.
+6. The ticket appears in the Ticket Inventory.
+7. Users can search the ticket inventory.
+
+## Edge Cases & Error Handling
+Explain the implemented handling for:
+- Empty form fields
+- Invalid input
+- Duplicate ticket numbers
+- Empty search results
+- Loading/asynchronous operations
+- XSS-related input
+
+Use the actual message "No data found" where applicable.
+
+## Accessibility
+Document the accessibility implementation based on the actual code and verified results.
+
+Mention:
+- ARIA attributes
+- Keyboard navigation
+- Accessible validation/status messaging
+- Lighthouse Accessibility score of 100%, only if this has actually been verified
+
+## Security
+Explain the implemented input sanitization and how it helps prevent unsafe HTML/script content from being stored in application state.
+
+Do not make claims beyond what the implementation supports.
+
+## Analytics
+Document the required analytics console event:
+
+[Analytics] User interacted with Ticket QR Code Generator Worker
+
+Explain when this event is triggered.
+
+## Tech Stack
+Inspect package.json and the source code first.
+
+List only technologies that are actually used in this repository.
+
+Do not assume or add technologies such as React, Node.js, Express, MongoDB, Tailwind CSS, etc. unless they are actually present.
+
+## Project Structure
+Inspect the repository and document the important existing folders and files.
+
+Include relevant items such as:
+- src/
+- tests/
+- docs/
+- PROMPTS.md
+- package.json
+- vite.config.ts
+
+Only mention files and folders that actually exist.
+
+## Getting Started
+
+Provide the correct setup instructions based on the existing package.json.
+
+Include:
+- Clone repository
+- Install dependencies
+- Start development server
+
+Use the actual commands from package.json.
+
+## Available Scripts
+Document the actual npm scripts available in package.json, such as:
+- npm run dev
+- npm run build
+- npm test
+- npm run lint
+
+Only include scripts that actually exist.
+
+## Testing & Quality
+Document the actual verification performed on the project.
+
+Include test results, build verification, lint results, and accessibility verification only when supported by the current project evidence.
+
+Do not invent test counts or results.
+
+## Deployment
+Mention that the project is deployed on Vercel.
+
+Live Demo:
+https://ticket-qr-code-generator-git-master-btwitsnaushads-projects.vercel.app
+
+## Repository
+GitHub:
+https://github.com/btwitsnaushad/ticket-qr-code-generator
+
+## AI-Assisted Development Workflow
+Briefly document the development workflow used for this project.
+
+Mention:
+- TDD/test-first development
+- Iterative implementation
+- Browser-based verification
+- Edge-case testing
+- PROMPTS.md prompt traceability
+- AI-assisted development using Antigravity
+
+Keep this section factual and concise.
+
+## Requirements Coverage
+Create a table:
+
+| Requirement | Implementation |
+|---|---|
+| Empty state | "No data found" |
+| Invalid input | Form validation and prevented submission |
+| Duplicate tickets | Duplicate ticket number validation |
+| Loading state | Visual loading indicator |
+| Accessibility | ARIA attributes, keyboard navigation, Lighthouse verification |
+| XSS protection | Input sanitization |
+| Analytics | Required console telemetry |
+
+Only include items that are actually implemented and verified.
+
+## Installation / Development
+
+Provide a clean command example using the actual project scripts.
+
+## Conclusion
+Add a short professional summary of the implemented solution.
+
+Formatting requirements:
+- Use clean Markdown.
+- Use proper headings.
+- Use concise paragraphs.
+- Use bullet points and tables where useful.
+- Include code blocks only where necessary.
+- Keep the README professional and easy to understand.
+- Do not add unnecessary marketing language.
+- Do not add fake screenshots or fake information.
+- Do not expose API keys, secrets, or sensitive information.
+- Do not modify application functionality.
+
+IMPORTANT:
+Before writing the README, inspect the complete repository and verify all technical details.
+
+Only create/update README.md.
+
+Do not modify:
+- src/
+- tests/
+- package.json
+- package-lock.json
+- PROMPTS.md
+- vite.config.ts
+- other application/configuration files
+
+After creating README.md:
+1. Show me the complete README content.
+2. Show the files changed.
+3. Run git diff --check.
+4. Do not commit or push anything.
+5. Wait for my review before making any other changes.
+```
+
+---
+
+## Prompt 11: README Factual Corrections & Review
+```text
+Review the current README.md and make only the following factual corrections.
+
+1. In the Duplicate Ticket Numbers section, replace the generic error message with the actual implemented message format:
+"A ticket with number '<ticketNumber>' already exists."
+
+2. In the AI-Assisted Development Workflow section, do not claim that the complete test suite was authored before any feature code unless this is directly verifiable from the repository history. Use factual wording describing the test-driven/AI-assisted workflow without making an unsupported chronological claim.
+
+3. In the Deployment section, remove the phrase "automated continuous integration". Simply state that the project is deployed on Vercel.
+
+4. In the Conclusion, remove any claim of "full compliance with modern web accessibility guidelines". Instead mention that the project achieved a Lighthouse Accessibility score of 100% and includes automated accessibility tests.
+
+5. Do not modify any application source code, tests, package files, PROMPTS.md, or configuration files.
+
+6. Do not add any new features or information.
+
+7. After making the corrections:
+   - Run git diff --check
+   - Run git status
+   - Show me the changed README.md diff
+   - Do NOT commit or push anything yet.
+```
